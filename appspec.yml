@@ -4,20 +4,20 @@ files:
   - source: /
     destination: /var/www/basic_app/
 permissions:
-  - object: /var/www/basic_app
+  - object: /
     pattern: "**"
     owner: ec2-user
     group: ec2-user
-# hooks:
-#   AfterInstall:
-#     - location: scripts/install_dependencies
-#       timeout: 1000
-#       runas: root
-#   ApplicationStart:
-#     - location: scripts/start_server
-#       timeout: 1000
-#       runas: root
-#   ApplicationStop:
-#     - location: scripts/stop_server
-#       timeout: 1000
-#       runas: root
+hooks:
+  AfterInstall:
+    - location: scripts/install_dependencies
+      timeout: 1000
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server
+      timeout: 1000
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 1000
+      runas: root
