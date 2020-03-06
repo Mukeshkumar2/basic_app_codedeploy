@@ -10,6 +10,6 @@ permissions:
     group: ec2-user
 hooks:
   AfterInstall:
-    - location: /var/www/basic_app/scripts/run.sh
+    - location: run.sh
       timeout: 300
       runas: root
